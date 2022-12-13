@@ -1,18 +1,36 @@
-output "rds_hostname" {
-  description = "RDS instance hostname"
-  value       = aws_db_instance.education.address
-  sensitive   = true
+################################################################################
+# Cluster
+################################################################################
+
+output "cluster_arn" {
+  description = "ARN that identifies the cluster"
+  value       = module.ecs.cluster_arn
 }
 
-output "rds_port" {
-  description = "RDS instance port"
-  value       = aws_db_instance.education.port
-  sensitive   = true
+output "cluster_id" {
+  description = "ID that identifies the cluster"
+  value       = module.ecs.cluster_id
 }
 
-output "rds_username" {
-  description = "RDS instance root username"
-  value       = aws_db_instance.education.username
-  sensitive   = true
+output "cluster_name" {
+  description = "Name that identifies the cluster"
+  value       = module.ecs.cluster_name
 }
 
+################################################################################
+# Cluster Capacity Providers
+################################################################################
+
+output "cluster_capacity_providers" {
+  description = "Map of cluster capacity providers attributes"
+  value       = module.ecs.cluster_capacity_providers
+}
+
+################################################################################
+# Capacity Provider
+################################################################################
+
+output "autoscaling_capacity_providers" {
+  description = "Map of capacity providers created and their attributes"
+  value       = module.ecs.autoscaling_capacity_providers
+}
