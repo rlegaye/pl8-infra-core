@@ -4,7 +4,7 @@ provider "aws" {
 
 locals {
   name   = "ex-${replace(basename(path.cwd), "_", "-")}"
-  region = "eu-west-1"
+  region = "us-east-2"
 
   tags = {
     Example    = local.name
@@ -28,15 +28,15 @@ module "aurora" {
       instance_class      = "db.r5.large"
       publicly_accessible = true
     }
-    2 = {
-      identifier     = "mysql-static-1"
-      instance_class = "db.r5.2xlarge"
-    }
-    3 = {
-      identifier     = "mysql-excluded-1"
-      instance_class = "db.r5.xlarge"
-      promotion_tier = 15
-    }
+#    2 = {
+#      identifier     = "mysql-static-1"
+#      instance_class = "db.r5.2xlarge"
+#    }
+#    3 = {
+#      identifier     = "mysql-excluded-1"
+#      instance_class = "db.r5.xlarge"
+#      promotion_tier = 15
+#    }
   }
 
   vpc_id                 = module.vpc.vpc_id
