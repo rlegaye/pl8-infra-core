@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 locals {
-  region = "eu-west-1"
+  region = "us-east-2"
   name   = "ecs-ex-${replace(basename(path.cwd), "_", "-")}"
 
   user_data = <<-EOT
@@ -88,8 +88,8 @@ module "ecs" {
   tags = local.tags
 }
 
-module "hello_world" {
-  source = "./service-hello-world"
+module "pl8_core" {
+  source = "./service-pl8-core"
 
   cluster_id = module.ecs.cluster_id
 }
