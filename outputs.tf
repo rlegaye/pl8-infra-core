@@ -34,3 +34,12 @@ output "autoscaling_capacity_providers" {
   description = "Map of capacity providers created and their attributes"
   value       = module.ecs.autoscaling_capacity_providers
 }
+
+################################################################################
+# RDS
+################################################################################
+
+output "cluster_master_usernamez" {
+  description = "rds master username"
+  value       = module.rds_pl8_c0re.cluster_master_username
+}
