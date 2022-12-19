@@ -68,21 +68,21 @@ module "ecs" {
         base   = 20
       }
     }
-    two = {
-      auto_scaling_group_arn         = module.autoscaling["two"].autoscaling_group_arn
-      managed_termination_protection = "ENABLED"
-
-      managed_scaling = {
-        maximum_scaling_step_size = 15
-        minimum_scaling_step_size = 5
-        status                    = "ENABLED"
-        target_capacity           = 90
-      }
-
-      default_capacity_provider_strategy = {
-        weight = 40
-      }
-    }
+#    two = {
+#      auto_scaling_group_arn         = module.autoscaling["two"].autoscaling_group_arn
+#      managed_termination_protection = "ENABLED"
+#
+#      managed_scaling = {
+#        maximum_scaling_step_size = 15
+#        minimum_scaling_step_size = 5
+#        status                    = "ENABLED"
+#        target_capacity           = 90
+#      }
+#
+#      default_capacity_provider_strategy = {
+#        weight = 40
+#      }
+#   }
   }
 
   tags = local.tags

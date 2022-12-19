@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_log_group" "this" {
-  name_prefix       = "hello_world-"
+  name_prefix       = "pl8_core-"
   retention_in_days = 1
 }
 
