@@ -39,7 +39,7 @@ output "autoscaling_capacity_providers" {
 # RDS
 ################################################################################
 
-output "cluster_master_usernamez" {
-  description = "rds master username"
-  value       = module.rds_pl8_core.cluster_master_username
+output "cluster_portz" {
+  description = "rds port"
+  value       = module.rds_pl8_core.cluster_port
 }
