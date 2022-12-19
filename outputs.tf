@@ -41,5 +41,5 @@ output "autoscaling_capacity_providers" {
 
 output "cluster_master_usernamez" {
   description = "rds master username"
-  value       = module.rds_pl8_c0re.cluster_master_username
+  value       = module.rds_pl8_core.cluster_master_username
 }
