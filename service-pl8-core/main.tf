@@ -20,7 +20,17 @@ resource "aws_ecs_task_definition" "this" {
         "awslogs-group": "${aws_cloudwatch_log_group.this.name}",
         "awslogs-stream-prefix": "ec2"
       }
-    }
+    },
+    "environment" : [
+        {
+            "name" : "db_pass",
+            "value": "${dp_pass}"
+        },
+        {
+            "name" : "db_user",
+            "value": "${db_pass}"
+        }
+	]
   }
 ]
 EOF

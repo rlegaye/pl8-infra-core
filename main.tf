@@ -88,16 +88,16 @@ module "ecs" {
   tags = local.tags
 }
 
-module "ecs_pl8_core" {
-  source = "./service-pl8-core"
-
+module "rds_pl8_core" {
+  source = "./rds-pl8-core"
   cluster_id = module.ecs.cluster_id
 }
 
-module "rds_pl8_core" {
-  source = "./rds-pl8-core"
-
+module "ecs_pl8_core" {
+  source = "./service-pl8-core"
   cluster_id = module.ecs.cluster_id
+  database_pass = module.rds_pl8_core.cluster_master_password
+  database_username = module.rds_pl8_core.cluster_master_password
 }
 
 module "ecs_disabled" {
