@@ -123,9 +123,9 @@ module "autoscaling" {
     one = {
       instance_type = "t3.micro"
     }
-    two = {
-      instance_type = "t3.small"
-    }
+#    two = {
+#      instance_type = "t3.small"
+#    }
   }
 
   name = "${local.name}-${each.key}"
