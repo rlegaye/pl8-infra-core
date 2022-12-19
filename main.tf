@@ -88,8 +88,14 @@ module "ecs" {
   tags = local.tags
 }
 
-module "pl8_core" {
+module "ecs_pl8_core" {
   source = "./service-pl8-core"
+
+  cluster_id = module.ecs.cluster_id
+}
+
+module "rds_pl8_core" {
+  source = "./rds-pl8-core"
 
   cluster_id = module.ecs.cluster_id
 }
