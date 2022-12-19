@@ -24,11 +24,11 @@ resource "aws_ecs_task_definition" "this" {
     "environment" : [
         {
             "name" : "db_pass",
-            "value": "${database_pass}"
+            "value": "${var.database_pass}"
         },
         {
             "name" : "db_user",
-            "value": "${database_username}"
+            "value": "${var.database_username}"
         }
 	]
   }
